@@ -1052,8 +1052,8 @@ public class PushServiceSocket {
       context.init(null, trustManagers, null);
 
       return new OkHttpClient.Builder()
-                             .sslSocketFactory(new Tls12SocketFactory(context.getSocketFactory()), (X509TrustManager)trustManagers[0])
-                             .connectionSpecs(url.getConnectionSpecs().or(Util.immutableList(ConnectionSpec.RESTRICTED_TLS)))
+                             //.sslSocketFactory(new Tls12SocketFactory(context.getSocketFactory()), (X509TrustManager)trustManagers[0])
+                             //.connectionSpecs(url.getConnectionSpecs().or(Util.immutableList(ConnectionSpec.RESTRICTED_TLS)))
                              .build();
     } catch (NoSuchAlgorithmException | KeyManagementException e) {
       throw new AssertionError(e);
